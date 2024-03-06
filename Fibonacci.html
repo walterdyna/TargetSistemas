@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Fibonacci</title>
+    <script>
+        function verificaFibonacci() {
+            var numero = document.getElementById("numero").value;
+            var a = 0, b = 1;
+            while (a < numero) {
+                var temp = a;
+                a = b;
+                b = temp + b;
+            }
+            if (a == numero) {
+                document.getElementById("resultado").innerText = "O número " + numero + " pertence à sequência de Fibonacci.";
+            } else {
+                document.getElementById("resultado").innerText = "O número " + numero + " não pertence à sequência de Fibonacci.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar Fibonacci</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero">
+    <button onclick="verificaFibonacci()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>
